@@ -1,0 +1,25 @@
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('<h1>Welcome</h1>');
+});
+
+app.get('/about', (req, res) => {
+    res.send({
+        data: [
+            {
+                name: 'Anil',
+                email: 'anil@test.com'
+            },
+            {
+                name: 'Rishi',
+                email: 'Rishi@test.com'
+            }
+        ]
+    });
+});
+
+app.listen(3000, () => {
+    console.log('Server started on port 3000');
+});
